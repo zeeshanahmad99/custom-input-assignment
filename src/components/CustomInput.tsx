@@ -172,6 +172,7 @@ export default class CustomInput extends Vue {
   render() {
     return (
       <custom-input-container>
+        {/* @ts-ignore */}
         <div class={`custom-input ${this.inputValid && this.isEdit ? 'orange-border' : ''}`}>
           <input-box
             show={!this.isEdit}
