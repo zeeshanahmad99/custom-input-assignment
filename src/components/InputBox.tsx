@@ -27,8 +27,10 @@ const Box = styled('button')`
     background: #bcc2cb;
   }
 
-  &:active {
+  &:active,
+  &.active {
     background: #494c53;
+    color: white;
   }
 
   &:active svg[data-icon],

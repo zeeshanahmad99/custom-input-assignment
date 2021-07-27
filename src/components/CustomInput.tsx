@@ -74,6 +74,8 @@ export default class CustomInput extends Vue {
 
   inputValid = true;
 
+  externalLink = false;
+
   linkTypes = [
     {
       icon: 'envelope',
@@ -178,6 +180,7 @@ export default class CustomInput extends Vue {
             show={!this.isEdit}
             icon={this.linkTypes[this.selectedLink].icon}
             handleClick={this.toggleTool}
+            boxClass={this.showTool ? 'active' : ''}
           />
 
           <input-container>
@@ -207,7 +210,14 @@ export default class CustomInput extends Vue {
             handleClick={this.deleteClick}
           />
 
-          <input-box show={!this.isEdit} icon="external-link-alt" />
+          <input-box
+            show={!this.isEdit}
+            handleClick={() => {
+              this.externalLink = !this.externalLink;
+            }}
+            icon="external-link-alt"
+            boxClass={this.externalLink ? 'active' : ''}
+          />
         </div>
         <input-tooltip
           showTool={this.showTool}
