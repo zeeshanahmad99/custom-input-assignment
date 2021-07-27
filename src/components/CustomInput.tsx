@@ -2,6 +2,7 @@ import { styled } from '@egoist/vue-emotion';
 import { Component, Vue } from 'vue-property-decorator';
 import InputTooltip from './InputTooltip';
 import InputBox from './InputBox';
+import { Link } from './types';
 
 const CustomInputContainer = styled('div')`
   position: relative;
@@ -76,7 +77,7 @@ export default class CustomInput extends Vue {
 
   externalLink = false;
 
-  linkTypes = [
+  linkTypes: Link[] = [
     {
       icon: 'envelope',
       text: 'Link to Email',
@@ -99,7 +100,7 @@ export default class CustomInput extends Vue {
       name: 'phone',
       type: 'tel',
       placeholder: '03099188777',
-      pattern: '0[0-9]{10}',
+      pattern: /0[0-9]{10}/,
     },
   ];
 

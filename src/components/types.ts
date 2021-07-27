@@ -4,5 +4,5 @@ export interface Link {
   name: string;
   type: string;
   placeholder: string;
-  pattern: string;
+  pattern: RegExp;
 }
